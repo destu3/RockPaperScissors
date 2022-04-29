@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore= 0;
+
 function computerPlay(){
     const options = ["Rock","Paper","Scissors"];
     const randomIndex = Math.round(Math.random() * 2);
@@ -12,37 +15,55 @@ function playerChoice(){
 function playRound(computerSelection, playerSelection){
 
     let result;
-
+  
     if(computerSelection == playerSelection)
     {
         result = `No one won this round, computer chose ${computerSelection} and you chose ${playerSelection}`
     }
     else if(computerSelection == "Rock" && playerSelection == "Paper")
     {
-        result = `Player won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        playerScore += 1;
     }
     else if(computerSelection == "Paper" && playerSelection == "Scissors")
     {
-        result = `Player won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        playerScore += 1;
     }
     else if(computerSelection == "Scissors" && playerSelection == "Rock")
     {
-        result = `Player won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        playerScore += 1;
     }
     else if(computerSelection == "Rock" && playerSelection == "Scissors")
     {
         result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        computerScore += 1;
     }
     else if(computerSelection == "Paper" && playerSelection == "Rock")
     {
         result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        computerScore += 1;
     }
     else if(computerSelection == "Scissors" && playerSelection == "Paper")
     {
         result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+        computerScore += 1;
     }
 
     return result;
 }
 
-console.log(playRound(computerPlay(),playerChoice()));
+function game(){
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound(computerPlay(),playerChoice()));
+        if(i === 4){
+            console.log(`Final results are: You scored ${playerScore},  Computer scored ${computerScore}`);
+        }
+     }
+}
+
+game();
+
+
+

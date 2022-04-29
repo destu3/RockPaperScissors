@@ -9,5 +9,39 @@ function playerChoice(){
     return choice;
 }
 
-console.log(`Computer chose ${computerPlay()}`);
-console.log(`You chose ${playerChoice()}`);
+
+function playRound(computerSelection, playerSelection){
+
+    let result;
+
+    if(computerSelection == playerSelection)
+    {
+        console.log("It was a tie");
+    }
+    else if(computerSelection == "Rock" && playerSelection == "Paper")
+    {
+        result = "Player wins this one";
+    }
+    else if(computerSelection == "Paper" && playerSelection == "Scissors")
+    {
+        result = "Player wins this one";
+    }
+    else if(computerSelection == "Scissors" && playerSelection == "Rock")
+    {
+        result = "Player wins this one";
+    }
+    else if(computerSelection == "Rock" && playerSelection == "Scissors")
+    {
+        result = "Computer wins this one";
+    }
+    else if(computerSelection == "Paper" && playerSelection == "Rock")
+    {
+        result = "Player wins this one";
+    }
+    else if(computerSelection == "Scissors" && playerSelection == "Paper")
+    {
+        result = "Player wins this one";
+    }
+
+    return result;
+}

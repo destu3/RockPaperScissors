@@ -17,41 +17,45 @@ function playerChoice(){
 function playRound(computerSelection, playerSelection){
 
     let result;
-    if(computerSelection == playerSelection)
-    {
-        result = `No one won this round, computer chose ${computerSelection} and you chose ${playerSelection}`
+    switch (true) {
+        case computerSelection == playerSelection:
+            result = `No one won this round, computer chose ${computerSelection} and you chose ${playerSelection}`
+            break;
+        
+        case computerSelection == "Rock" && playerSelection == "Paper":
+            result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+            playerScore += 1;
+            break;
+        
+        case computerSelection == "Paper" && playerSelection == "Scissors":
+            result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+            playerScore += 1;
+            break;
+    
+        case computerSelection == "Scissors" && playerSelection == "Rock":
+            result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+            playerScore += 1;
+            break;
+    
+        case computerSelection == "Rock" && playerSelection == "Scissors":
+            result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+            computerScore += 1;
+            break;
+    
+        case computerSelection == "Paper" && playerSelection == "Rock":
+            result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+            computerScore += 1;
+            break;
+        
+        case computerSelection == "Scissors" && playerSelection == "Paper":
+            result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
+            computerScore += 1;
+            break;
+    
+        default: 
+            result = "The value you have entered is not valid"
+            break;
     }
-    else if(computerSelection == "Rock" && playerSelection == "Paper")
-    {
-        result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
-        playerScore += 1;
-    }
-    else if(computerSelection == "Paper" && playerSelection == "Scissors")
-    {
-        result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
-        playerScore += 1;
-    }
-    else if(computerSelection == "Scissors" && playerSelection == "Rock")
-    {
-        result = `You won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
-        playerScore += 1;
-    }
-    else if(computerSelection == "Rock" && playerSelection == "Scissors")
-    {
-        result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
-        computerScore += 1;
-    }
-    else if(computerSelection == "Paper" && playerSelection == "Rock")
-    {
-        result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
-        computerScore += 1;
-    }
-    else if(computerSelection == "Scissors" && playerSelection == "Paper")
-    {
-        result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
-        computerScore += 1;
-    }
-
     return result;
 }
 

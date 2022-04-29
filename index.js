@@ -9,39 +9,40 @@ function playerChoice(){
     return choice;
 }
 
-
 function playRound(computerSelection, playerSelection){
 
     let result;
 
     if(computerSelection == playerSelection)
     {
-        console.log("It was a tie");
+        result = `No one won this round, computer chose ${computerSelection} and you chose ${playerSelection}`
     }
     else if(computerSelection == "Rock" && playerSelection == "Paper")
     {
-        result = "Player wins this one";
+        result = `Player won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
     }
     else if(computerSelection == "Paper" && playerSelection == "Scissors")
     {
-        result = "Player wins this one";
+        result = `Player won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
     }
     else if(computerSelection == "Scissors" && playerSelection == "Rock")
     {
-        result = "Player wins this one";
+        result = `Player won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
     }
     else if(computerSelection == "Rock" && playerSelection == "Scissors")
     {
-        result = "Computer wins this one";
+        result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
     }
     else if(computerSelection == "Paper" && playerSelection == "Rock")
     {
-        result = "Player wins this one";
+        result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
     }
     else if(computerSelection == "Scissors" && playerSelection == "Paper")
     {
-        result = "Player wins this one";
+        result = `Computer won this round, computer chose ${computerSelection} and you chose ${playerSelection}`;
     }
 
     return result;
 }
+
+console.log(playRound(computerPlay(),playerChoice()));

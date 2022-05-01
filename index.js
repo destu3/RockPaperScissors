@@ -12,7 +12,7 @@ Plan: GAME STARTS
 */
 
 let playerScore = 0;
-let computerScore= 0;
+let computerScore = 0;
 
 //returns/generates random choice value for the computer
 function computerPlay(){
@@ -83,7 +83,7 @@ function game(){
             console.log(`Final results are: You scored ${playerScore} and the Computer scored ${computerScore}`);
             
             if(computerScore > playerScore){
-                console.log("The computer remains takes the W")
+                console.log("The computer takes the W")
             }
             else if(computerScore < playerScore){
                 console.log("Man-kind has defeated technology")

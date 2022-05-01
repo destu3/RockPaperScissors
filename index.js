@@ -1,8 +1,6 @@
 let playerScore = 0;
 let computerScore= 0;
 
-game();
-
 function computerPlay(){
     const options = ["Rock","Paper","Scissors"];
     const randomIndex = Math.round(Math.random() * 2);
@@ -10,7 +8,8 @@ function computerPlay(){
 }
 
 function playerChoice(){
-    const choice = prompt("Your turn, choose between rock paper and scissors");
+    let choice = prompt("Your turn, choose between rock paper and scissors");
+    choice = choice.charAt(0).toUpperCase() + choice.slice(1);
     return choice;
 }
 
@@ -53,16 +52,17 @@ function playRound(computerSelection, playerSelection){
             break;
     
         default: 
-            result = "The value you have entered is not valid"
+            result = "The value you have entered is not valid, automatic round win for computer"
+            computerScore += 1;
             break;
     }
     return result;
 }
 
 function game(){
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         console.log(playRound(computerPlay(),playerChoice()));
-        if(i === 4){
+        if(i === 5){
             console.log(`Final results are: You scored ${playerScore},  Computer scored ${computerScore}`);
             
             if(computerScore > playerScore){
@@ -77,3 +77,5 @@ function game(){
         }
      }
 }
+
+game();

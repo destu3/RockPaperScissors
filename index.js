@@ -24,7 +24,7 @@ function computerPlay(){
 //function used to get the players choice 
 function playerChoice(){
     let choice = prompt("Your turn, choose between rock paper and scissors");
-    choice = choice.charAt(0).toUpperCase() + choice.slice(1);
+    choice = choice.charAt(0).toUpperCase() + choice.slice(1).toLowerCase();
     return choice;
 }
 

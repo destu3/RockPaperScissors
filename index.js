@@ -76,23 +76,23 @@ function playRound(computerSelection, playerSelection){
 }
 
 //main game function. 5 rounds are played
-function game(){
-    for (let i = 1; i <= 5; i++) {
-        console.log(playRound(computerPlay(),playerChoice()));
-        if(i === 5){
-            console.log(`Final results are: You scored ${playerScore} and the Computer scored ${computerScore}`);
+// function game(){
+//     for (let i = 1; i <= 5; i++) {
+//         console.log(playRound(computerPlay(),playerChoice()));
+//         if(i === 5){
+//             console.log(`Final results are: You scored ${playerScore} and the Computer scored ${computerScore}`);
             
-            if(computerScore > playerScore){
-                console.log("The computer takes the W")
-            }
-            else if(computerScore < playerScore){
-                console.log("Man-kind has defeated technology")
-            }
-            else{
-                console.log("Mankind and computers are evenly matched ... apparently ")
-            }
-        }
-     }
-}
+//             if(computerScore > playerScore){
+//                 console.log("The computer takes the W")
+//             }
+//             else if(computerScore < playerScore){
+//                 console.log("Man-kind has defeated technology")
+//             }
+//             else{
+//                 console.log("Mankind and computers are evenly matched ... apparently ")
+//             }
+//         }
+//      }
+// }
 
 game();

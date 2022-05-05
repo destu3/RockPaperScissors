@@ -13,9 +13,10 @@ Plan: GAME STARTS
 
 let playerScore = 0;
 let computerScore = 0;
+const choiceButtons = document.querySelectorAll(".choiceButton")
 
 //returns/generates random choice value for the computer
-function computerPlay(){
+function computerChoice(){
     const options = ["Rock","Paper","Scissors"];
     const randomIndex = Math.round(Math.random() * 2);
     return options[randomIndex];
@@ -95,4 +96,23 @@ function playRound(computerSelection, playerSelection){
 //      }
 // }
 
-game();
+
+// for each button of class choiceButton run add an event listener to it and determine what button was clicked and set playerChoice accordingly
+choiceButtons.forEach((choiceButton) => {
+    choiceButton.addEventListener("click", (e) => {
+        let playerChoice = "";
+        if (e.currentTarget.classList.contains("rockButton")){
+            playerChoice = "Rock";
+        }
+        else if (e.currentTarget.classList.contains("scissorsButton")){
+            playerChoice = "Scissors";
+        }
+        else{
+            playerChoice = "Paper";
+        }
+        console.log(playRound(computerChoice(), playerChoice));
+    })
+})
+
+
+//game();

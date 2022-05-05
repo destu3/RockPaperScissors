@@ -14,19 +14,13 @@ Plan: GAME STARTS
 let playerScore = 0;
 let computerScore = 0;
 const choiceButtons = document.querySelectorAll(".choiceButton")
+const roundResults = document.querySelector(".roundResults")
 
 //returns/generates random choice value for the computer
 function computerChoice(){
     const options = ["Rock","Paper","Scissors"];
     const randomIndex = Math.round(Math.random() * 2);
     return options[randomIndex];
-}
-
-//function used to get the players choice 
-function playerChoice(){
-    let choice = prompt("Your turn, choose between rock paper and scissors");
-    choice = choice.charAt(0).toUpperCase() + choice.slice(1).toLowerCase();
-    return choice;
 }
 
 //compares computer and player choice and decides a round winner
@@ -110,7 +104,7 @@ choiceButtons.forEach((choiceButton) => {
         else{
             playerChoice = "Paper";
         }
-        console.log(playRound(computerChoice(), playerChoice));
+        roundResults.textContent = playRound(computerChoice(),playerChoice)
     })
 })
 

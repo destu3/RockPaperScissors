@@ -1,6 +1,7 @@
 /*
 Understand the problem - create a rock paper scissors game that will be played from the console. The opponent will be the computer. Who ever has the highest score at round 5 wins
 
+// !needs changed
 Plan: GAME STARTS 
       Generate the computers random choice
       Get the users choice from using the build in prompt function.
@@ -77,7 +78,7 @@ function playRound(computerSelection, playerSelection){
 
     
 // for each button of class choiceButton run add an event listener to it and determine what button was clicked and set playerChoice accordingly    
-choiceButtons.forEach((choiceButton) => {
+choiceButtons.forEach(function(choiceButton) {
     choiceButton.addEventListener("click", (e) => {
         let playerChoice = "";
         if (e.currentTarget.classList.contains("rockButton")){
@@ -111,6 +112,4 @@ choiceButtons.forEach((choiceButton) => {
             }   
     })
 })
-
-
 
